@@ -1,7 +1,7 @@
 import { Todo } from '@/types/Todo';
 import changeTodoStatus from '@/app/actions/changeTodoStatus';
 
-export default function TodoCheckbox({ todo } : { todo: Todo }) {
+const TodoCheckbox = ({ todo } : { todo: Todo }) => {
   const updateStatus = async () => {
     await changeTodoStatus(todo.id);
   };
@@ -12,3 +12,5 @@ export default function TodoCheckbox({ todo } : { todo: Todo }) {
     </>
   );
 }
+
+export default TodoCheckbox;
