@@ -1,9 +1,7 @@
-"use client";
-
 import { Todo } from '@/types/Todo';
 import changeTodoStatus from '@/app/actions/changeTodoStatus';
 
-const TodoCheckbox = async({ todo } : { todo: Todo }) => {
+export default function TodoCheckbox({ todo } : { todo: Todo }) {
   const updateStatus = async () => {
     await changeTodoStatus(todo.id);
   };
@@ -12,7 +10,5 @@ const TodoCheckbox = async({ todo } : { todo: Todo }) => {
     <>
       <input type="checkbox" checked={todo.status} onChange={updateStatus} />
     </>
-   );
+  );
 }
- 
-export default TodoCheckbox;

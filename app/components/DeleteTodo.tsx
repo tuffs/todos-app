@@ -1,9 +1,7 @@
-"use client";
-
 import { Todo } from '@/types/Todo';
 import deleteTodo from '@/app/actions/deleteTodo';
 
-const DeleteTodo = async({ todo } : { todo: Todo }) => {
+export default function DeleteTodo({ todo } : { todo: Todo }) {
   const handleDeleteTodo = async() => await deleteTodo(todo.id);
 
   return ( 
@@ -12,6 +10,3 @@ const DeleteTodo = async({ todo } : { todo: Todo }) => {
     </>
    );
 }
- 
-export default DeleteTodo;
-

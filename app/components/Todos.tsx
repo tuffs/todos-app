@@ -1,7 +1,7 @@
 import getTodos from '@/app/actions/getTodos';
 import TodoItem from '@/app/components/TodoItem';
 
-const Todos = async() => {
+export default async function Todos() {
   // Get todos from the database, if not, get the error message
   const { todos, error } = await getTodos();
 
@@ -15,11 +15,9 @@ const Todos = async() => {
     <>
       <div className="todo_list">
         { todos && todos.map((todo:any) => (
-          <TodoItem todo={todo} />
+          <TodoItem todo={todo} key={todo.id} />
         ))}
       </div>
     </>
   );
 }
- 
-export default Todos;

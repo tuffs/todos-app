@@ -1,3 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.scss";
+
 import Title from '@/app/components/Title';
 import Todos from '@/app/components/Todos';
 import AddTodo from '@/app/components/AddTodo';
