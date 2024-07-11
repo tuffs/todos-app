@@ -49,7 +49,7 @@ const RegisterUser = () => {
               <input type="password" id="password_confirmation" name="password_confirmation" className="w-100 form-control" required />
             </div>
             <div className="mb-3">
-              <button type="submit" className="btn btn-primary w-100">
+              <button type="submit" className="btn btn-lg btn-primary w-100">
                 Sign Up
               </button>
             </div>
