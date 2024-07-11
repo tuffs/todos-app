@@ -34,15 +34,15 @@ const RegisterUser = () => {
         <form ref={formRef} action={clientAction}>
           <div className="mb-3">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" className="w-100 form-control" />
+            <input type="text" id="name" name="name" className="w-100 form-control" required />
           </div>
           <div className="mb-3">
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" className="w-100 form-control" />
+            <input type="text" id="email" name="email" className="w-100 form-control" required />
           </div>
           <div className="mb-3">
             <label htmlFor="password">Password</label>
-            <input type="text" id="password" name="password" className="w-100 form-control" />
+            <input type="text" id="password" name="password" className="w-100 form-control" required />
           </div>
           <div className="mb-3">
             <button type="submit" className="btn btn-primary w-100">

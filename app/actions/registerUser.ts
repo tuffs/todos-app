@@ -2,6 +2,7 @@
 
 import { db } from '@/lib/db'
 import { revalidatePath } from 'next/cache';
+import bcrypt from 'bcrypt';
 
 interface RegisterUserData {
   name: string;
@@ -33,13 +34,18 @@ async function registerUser(formData: FormData):Promise<RegisterUserResult> {
   const name: string = nameValue.toString();
   const email: string = emailValue.toString();
   const password: string = passwordValue.toString();
+
+  // Salt and Hash Password
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
   
   try {
+    // Save user data as well as the password hash
     const registerUserData: RegisterUserData = await db.user.create({
       data: {
         name: name,
         email: email,
-        password: password,
+        password: hash,
       },
     });
     
