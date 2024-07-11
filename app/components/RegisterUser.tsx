@@ -2,6 +2,8 @@
 
 import { useRef } from 'react';
 import registerUser from '@/app/actions/registerUser';
+import Title from '@/app/components/Title';
+import Footer from '@/app/components/Footer';
 
 const RegisterUser = () => {
 
@@ -28,6 +30,11 @@ const RegisterUser = () => {
           <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4 col-xl-4" />
           <div className="col-xs-0 col-sm-0 col-md-4 col-lg-4 col-xl-4">
             <div className="sign_up_form">
+              <Title
+                title="User Registration"
+                showInspiringPrompt={false}
+                classes="mb-4 pb-3"
+              />
               <form ref={formRef} action={clientAction}>
                 <div className="mb-3">
                   <label htmlFor="name">Name</label>
@@ -55,6 +62,7 @@ const RegisterUser = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
    );
 }

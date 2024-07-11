@@ -43,7 +43,7 @@ async function registerUser(formData: FormData):Promise<RegisterUserResult> {
       },
     });
     
-    revalidatePath('/');
+    revalidatePath('/registration');
 
     return { data: registerUserData };
   } catch (error) {

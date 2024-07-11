@@ -1,12 +1,14 @@
 import InspiringPrompt from './InspiringPrompt';
 
-const Title = () => {
+const Title = ({ title, showInspiringPrompt, classes }: { title: string, showInspiringPrompt: boolean, classes?: string }) => {
   return (
     <>
-      <h1 className="mb-0 pb-0">
-        Todo App
-      </h1>
-      <InspiringPrompt />
+      <div className={classes}>
+        <h1 className="mb-0 pb-0">
+          { title }
+        </h1>
+      </div>
+      { showInspiringPrompt && <InspiringPrompt /> }
     </>
   );
 }
