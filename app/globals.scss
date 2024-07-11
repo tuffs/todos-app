@@ -22,6 +22,19 @@ hr {
   opacity: 1;
 }
 
+label {
+  font-weight: bold;
+}
+
+.success {
+  text-align: center;
+  color: #198754 !important;
+}
+
+h2.success {
+  font-weight: 600 !important;
+}
+
 .todo_list {
   border: 2px solid #301b54;
 }
@@ -56,7 +69,8 @@ input[type="checkbox"].checkbox {
   text-decoration: none !important;
 }
 
-input[type="text"], input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus {
+input[type="text"], input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus,
+input[type="password"], input[type="password"]:hover, input[type="password"]:active, input[type="password"]:focus {
   border: none !important;
   box-shadow: 0 !important;
   color: white;

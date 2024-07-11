@@ -19,21 +19,39 @@ async function registerUser(formData: FormData):Promise<RegisterUserResult> {
   const nameValue = formData.get('name') as string;
   const emailValue = formData.get('email') as string;
   const passwordValue = formData.get('password') as string;
+  const passwordConfirmationValue = formData.get('password_confirmation') as string;
 
   // Check for non-empty input values
-  if ( !nameValue || nameValue === "" || !emailValue || emailValue === "" || !passwordValue || passwordValue === "") {
+  if (
+      !nameValue || nameValue === "" ||
+      !emailValue || emailValue === "" ||
+      !passwordValue || passwordValue === "" ||
+      !passwordConfirmationValue || passwordConfirmationValue === ""
+  ) {
     return { error: "There was a problem with the data provided." }
   }
 
   // Check for valid input types
-  if (typeof(nameValue) !== "string" || typeof(emailValue) !== "string" || typeof(passwordValue) !== "string") {
+  if (
+      typeof(nameValue) !== "string" ||
+      typeof(emailValue) !== "string" ||
+      typeof(passwordValue) !== "string" ||
+      typeof(passwordConfirmationValue) !== "string"
+  ) {
     return { error: "There was a problem with the data provided." }
+  }
+
+  if (
+    passwordValue !== passwordConfirmationValue
+  ) {
+    return { error: "Passwords do not match." }
   }
 
   // Ensure that name, email, and password are strings
   const name: string = nameValue.toString();
   const email: string = emailValue.toString();
   const password: string = passwordValue.toString();
+  const password_confirmation: string = passwordConfirmationValue.toString();
 
   // Salt and Hash Password
   const salt = bcrypt.genSaltSync(10);
