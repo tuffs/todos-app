@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title';
 import Todos from '@/app/components/Todos';
 import AddTodo from '@/app/components/AddTodo';
-import Footer from '@/app/components/Footer';
 
 const Home = async () => {
   return (
